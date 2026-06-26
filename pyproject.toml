@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.legacy:build"
+
+[project]
+name = "sap-concur-python"
+version = "0.1.0"
+description = "The most complete Python client for the SAP Concur API — Expense Reports, Travel, Users, Financial Integration"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+keywords = [
+    "SAP Concur", "Concur API", "Concur Python", "expense reports", "travel",
+    "SAP Concur SDK", "Concur API v4", "expense management"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = ["httpx>=0.27", "pydantic>=2.0", "click>=8.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+concur = "concur.cli:cli"
+
+[project.urls]
+Homepage = "https://tevasoft.eu"
+Repository = "https://github.com/tevasoft/sap-concur-python"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
